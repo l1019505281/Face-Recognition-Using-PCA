@@ -26,6 +26,8 @@ for i = 1 : Train_Number
     temp = ( norm( Projected_TestImage - q ) )^2;
     Euc_dist = [Euc_dist temp];
 end
-
+        %这里直接用Eigenfaces*Test_mean-Eigenfaces*Train_mean（i）取最小值
+        %论文中是用Eig_vec*Test-TestEigenfaces（i）取最小值
+        
 [Euc_dist_min , Recognized_index] = min(Euc_dist);
 OutputName = strcat(int2str(Recognized_index),'.jpg');

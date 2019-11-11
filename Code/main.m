@@ -2,8 +2,10 @@ clear all
 close all
 clc
 
-Training_Path = 'TrainDatabase';  %Set your directory for training data file
-Testing_Path = 'TestDatabase';    %Set your directory for testing data file
+Training_Path = 'G:\GithubCode\Face-Recognition-Using-PCA\TrainDatabase';  %Set your directory for training data file
+Testing_Path = 'G:\GithubCode\Face-Recognition-Using-PCA\TestDatabase';    %Set your directory for testing data file
+
+flist = dir(strcat(Training_Path,'\*.jpg'))
 
 disp('Pick a Testing Photo From TestDatabase please')
 [filename, pathname] = uigetfile({'*.jpg'},'Pick a Testing Photo From TestDatabase please');
