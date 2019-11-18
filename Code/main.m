@@ -2,7 +2,8 @@ clear all
 close all
 clc
 
-Training_Path = 'G:\GithubCode\Face-Recognition-Using-PCA\TrainDatabase';  %Set your directory for training data file
+% Training_Path = 'G:\GithubCode\Face-Recognition-Using-PCA\TrainDatabase';%使用网上数据集
+Training_Path = 'G:\GithubCode\Face-Recognition-Using-PCA\TrainData';  %使用自己做的数据集
 Testing_Path = 'G:\GithubCode\Face-Recognition-Using-PCA\TestDatabase';    %Set your directory for testing data file
 
 flist = dir(strcat(Training_Path,'\*.jpg'))
@@ -12,6 +13,12 @@ disp('Pick a Testing Photo From TestDatabase please')
 disp('Hold a second for computing')
 TestImage = [pathname, filename];
 im = imread(TestImage);
+
+% disp('Pick a Photo From to reco the people')
+% [filename, pathname] = uigetfile({'*.jpg'},'Pick a Testing Photo From Imagedata please');
+% disp('Hold a second for computing')
+% TestImage = [pathname, filename];
+% im = imread(TestImage);
 
 Training_Data = ReadFace(Training_Path);
 [m, A, Eigenfaces] = EigenfaceCore(Training_Data);
