@@ -53,7 +53,15 @@ function [Image,bboxes] = FaceDetect(value,Training_Path)
             imwrite(BWimg,path);
         end
 
-        %imshow(BWimg);
+        imshow(BWimg);
     end
     %FrontalFaceCART=insertObjectAnnotation(img,'rectangle',bboxes,'Face');
     %imshow(FrontalFaceCART);title('FrontalFaceCART');
+end
+
+function ShowImg(OutputName,bboxes,Image)
+    img = imread
+    FrontalFaceCART=insertObjectAnnotation(img,'rectangle',bboxes[],'Face');
+    imshow(FrontalFaceCART);title('FrontalFaceCART');
+
+end

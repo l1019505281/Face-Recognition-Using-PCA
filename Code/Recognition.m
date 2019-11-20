@@ -1,4 +1,4 @@
-function OutputName = Recognition(TestImage, m, A, Eigenfaces)
+function [OutputName,OutputNumber] = Recognition(TestImage, m, A, Eigenfaces)
 %-------------Project the selected test image and all of the training
 %images into Eigenfaces space. Compare the Euclidean distances between them and find the
 %  index of image who gets minmum Euclidean distances.
@@ -30,4 +30,5 @@ end
         %论文中是用Eig_vec*Test-TestEigenfaces（i）取最小值
         
 [Euc_dist_min , Recognized_index] = min(Euc_dist);
+OutputNumber = Recognized_index;
 OutputName = strcat(int2str(Recognized_index),'.jpg');
